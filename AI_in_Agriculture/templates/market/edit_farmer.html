@@ -1,0 +1,13 @@
+{% extends 'market/base.html' %}
+
+{% block content %}
+	<h1>Edit Profile</h1>
+	<form method="post">
+		{% csrf_token %}
+		<div class="form-group">
+			<label>Location:</label>
+			<input class="form-control" type="text" name="location" value="{{ farmer.location }}" required>
+		</div>
+		<button type="submit" class="btn btn-primary">Save Changes</button>
+	</form>
+{% endblock %}

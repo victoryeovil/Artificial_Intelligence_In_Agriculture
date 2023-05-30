@@ -1,0 +1,14 @@
+<!-- plant_search.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Plant Search</h1>
+
+  {% if plants %}
+    <h2>Plant Information</h2>
+    <p>{{ plants }}</p>
+  {% else %}
+    <p class="text-danger">{{ error }}</p>
+  {% endif %}
+{% endblock %}

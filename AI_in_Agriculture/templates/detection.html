@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <div class="card">
+        <div class="card-header">
+          <h1 class="text-center">{{ plant_name }}</h1>
+        </div>
+        <div class="card-body">
+          {% if common_names %}
+            <p><strong>Common names:</strong> {{ common_names|join:', ' }}</p>
+          {% endif %}
+          {% if family %}
+            <p><strong>Family:</strong> {{ family }}</p>
+          {% endif %}
+          {% if diseases %}
+            <p><strong>Diseases:</strong> {{ diseases|join:', ' }}</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

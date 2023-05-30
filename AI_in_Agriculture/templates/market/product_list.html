@@ -1,0 +1,25 @@
+{% extends 'market/base.html' %}
+
+{% block content %}
+  <h1>Product List</h1>
+  {% if user_location %}
+    <p>You are currently located in {{ user_location }}.</p>
+  {% endif %}
+  <div class="row">
+    {% for product in products %}
+      <div class="col-md-4">
+        <div class="card">
+          <img class="card-img-top" src="{{ product.image.url }}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">{{ product.description }}</p>
+            <p class="card-text">Price: ${{ product.price }}</p>
+            <p class="card-text">Farmer: {{ product.farmer }}</p>
+            
+            <a href="{% url 'product_detail' product.pk %}" class="btn btn-primary">View</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

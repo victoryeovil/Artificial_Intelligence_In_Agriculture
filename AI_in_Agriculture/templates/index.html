@@ -1,0 +1,36 @@
+<!-- index.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <div class="text-center">
+    <h1>Welcome to the AI In Agriculture Web App!</h1>
+    <p class="lead">Leveraging the power of Artificial Intelligence in Agriculture</p>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-md-6">
+      <img src="{% static 'images/download.jpeg'%}" class="img-fluid rounded" alt="AI in Agriculture">
+    </div>
+    <div class="col-md-6">
+      <h2>Transforming Agriculture with AI</h2>
+      <p>Artificial Intelligence (AI) plays a crucial role in modern agriculture by providing innovative solutions to enhance productivity, sustainability, and efficiency.</p>
+      <p>By leveraging AI technologies, farmers can make data-driven decisions, optimize resource utilization, predict weather patterns, detect diseases, and improve crop yield.</p>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-md-6 order-md-2">
+      <img src="{% static 'images/ai.jpeg'%}" class="img-fluid rounded" alt="AI in Agriculture">
+    </div>
+    <div class="col-md-6 order-md-1">
+      <h2>Our AI-Powered Features</h2>
+      <ul>
+        <li>Real-time Weather Forecast: Get accurate weather predictions tailored to your location.</li>
+        <li>Plant Search: Find comprehensive information on various crops, cultivation requirements, and best practices.</li>
+        <li>Market Analysis: Access up-to-date market trends, prices, and demand for agricultural produce.</li>
+        <li>Disease Recognition: Detect plant diseases using image recognition and receive recommendations for treatment.</li>
+      </ul>
+    </div>
+  </div>
+{% endblock %}

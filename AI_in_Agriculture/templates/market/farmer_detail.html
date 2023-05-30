@@ -1,0 +1,21 @@
+{% extends 'market/base.html' %}
+
+{% block content %}
+	<h1>{{ farmer.name }}</h1>
+	<div class="row">
+		<div class="col-md-6">
+			<p><>Location:</strong> {{ farmer.location }}</p>
+			<p><>Products:</strong></p>
+			<ul>
+				{% for product in farmer.products.all %}
+					<li>< href="{% url 'product_detail' product.pk %}">{{ product.name }}</a></li>
+				{% endfor %}
+			</ul>
+			<a href="{% url 'edit_farmer' farmer.pk %}" class="btn btn-secondary">Edit Profile</a>
+			<form method="post" action="{% url 'delete_farmer' farmer.pk %}" class="d-inline">
+				{% csrf_token %}
+				<button type="submit" class="btn btn-danger">Delete Profile</button>
+			</form>
+		</div>
+	</div>
+{% endblock %}

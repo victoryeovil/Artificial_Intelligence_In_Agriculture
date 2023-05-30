@@ -1,0 +1,25 @@
+{% extends 'market/base.html' %}
+
+{% block content %}
+	<h1>{{ product.name }}</h1>
+	<div class="row">
+		<div class="col-md-6">
+			<img src="{{ product.image.url }}" class="img-fluid">
+		</div>
+		<div class="col-md-6">
+			<p>{{ product.description }}</p>
+			<p><>Price:</strong> ${{ product.price }}</p>
+			<p><>Farmer:</strong> {{ product.farmer.name }}</p>
+			{% if user_location and product.farmer.location %}
+				<p><>Distance:</strong> {{ product.distance }} km from you ({{ product.farmer.location }})</p>
+			{% endif %}
+			{% if request.user.is_authenticated and request.user.farmer == product.farmer %}
+				<a href="{% url 'edit_product' product.pk %}" class="btn btn-secondary">Edit</a>
+				<form method="post" action="{% url 'delete_product'  pk=product.pk %}" class="d-inline">
+					{% csrf_token %}
+					<button type="submit" class="btn btn-danger">Delete</button>
+				</form>
+			{% endif %}
+		</div>
+	</div>
+{% endblock %}

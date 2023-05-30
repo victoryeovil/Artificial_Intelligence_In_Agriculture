@@ -1,0 +1,26 @@
+<!-- weather.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Weather Data</h1>
+
+<div class="mb-4">
+  <p>Get the latest weather data for your location:</p>
+  <a href="{% url 'current' %}" class="btn btn-primary mr-3">Current Weather</a>
+  <a href="{% url 'focus' %}" class="btn btn-primary">Forecast Weather</a>
+</div>
+
+<div>
+  <h2>Why Use Weather Forecasting?</h2>
+  <p>Weather forecasting can provide many advantages, including:</p>
+  <ul>
+    <li>Helping you prepare for extreme weather events, such as hurricanes, tornadoes, or snowstorms</li>
+    <li>Allowing you to plan outdoor activities, such as hiking, camping, or sports events, based on the expected weather conditions</li>
+    <li>Assisting with agricultural planning and crop management, by predicting weather patterns and rainfall amounts</li>
+    <li>Enabling energy companies to optimize energy production and distribution, based on expected demand and weather conditions</li>
+    <li>Helping transportation companies and airlines to plan routes and schedules, based onexpected weather conditions and potential delays</li>
+  </ul>
+</div>
+
+{% endblock %}

@@ -1,0 +1,15 @@
+<!-- plant_details.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-6">
+      <h1>{{ plant.title }}</h1>
+      {% if plant.thumbnail %}
+        <img src="{{ plant.thumbnail.source }}" alt="{{ plant.title }}" class="img-fluid mb-3">
+      {% endif %}
+      <p>{{ plant.extract }}</p>
+    </div>
+  </div>
+{% endblock %}

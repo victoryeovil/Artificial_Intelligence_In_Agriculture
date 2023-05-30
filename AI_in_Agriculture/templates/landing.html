@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <header class="container">
+    <h1>Plant Detection</h1>
+    <p>Identify plant diseases and pests with our AI-powered tool.</p>
+  </header>
+  <main class="container">
+    <section>
+      <h2>How it works</h2>
+      <p>Our plant detection tool uses artificial intelligence to identify plant diseases and pests. Simply upload a photo of your plant and our tool will provide a diagnosis.</p>
+      <p>Our tool is accurate and can identify over 100 different plant diseases and pests. It is also easy to use, making it a valuable tool for any gardener.</p>
+    </section>
+    <section>
+      <h2>Benefits</h2>
+      <ul>
+        <li>Identify plant diseases and pests quickly and easily</li>
+        <li>Get accurate diagnoses from our AI-powered tool</li>
+        <li>Treat your plants with the right care to prevent further damage</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Get started</h2>
+      <p>To get started, simply upload a photo of your plant below. Our tool will provide a diagnosis in seconds.</p>
+      <form action="/detect/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="image" class="form-control-file mb-3">
+        <input type="submit" value="Detect" class="btn btn-primary">
+      </form>
+    </section>
+    <section>
+      <h2>Examples</h2>
+      <p>Here are some examples of plants and their corresponding diagnoses:</p>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="example">
+            <img src="{% static 'images/leaf.jpeg'%}" alt="Plant 1" class="img-fluid">
+            <p class="diagnosis">Diagnosis: Leaf spot disease</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="example">
+            <img src="{% static 'images/aphid.jpeg'%}" alt="Plant 2" class="img-fluid">
+            <p class="diagnosis">Diagnosis: Aphid infestation</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="container">
+    <p>&copy; 2023 Plant Detection</p>
+  </footer>
+{% endblock %}
